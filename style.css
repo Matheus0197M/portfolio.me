@@ -67,6 +67,16 @@ a:hover {
     color: var(--accent-hover);
 }
 
+.workTogether{
+    padding: 4rem 1rem;
+}
+
+.workTogether:hover{
+    color: #ffbf60;
+    transform: translateY(-20px);
+    transition: all 400ms ease;
+}
+
 .theme-btn {
     background: none;
     border: 1px solid var(--accent-color);
