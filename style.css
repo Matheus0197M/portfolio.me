@@ -1,0 +1,223 @@
+/* VARIÁVEIS (Corrigidas para a sintaxe oficial do CSS) */
+:root {
+    --bg-primary: #141414;
+    --bg-secondary: #22002f;
+    --text-color: whitesmoke;
+    --header-bg: linear-gradient(to bottom, rgba(34, 0, 47, 0.95), rgba(20, 20, 20, 0.5));
+    --accent-color: #ff9800;
+    --accent-hover: #ffb74d;
+}
+
+/* Classe aplicada via JavaScript para o Tema Claro */
+.light-theme {
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #e0e0e0;
+    --text-color: #1a1a1a;
+    --header-bg: linear-gradient(to bottom, rgba(245, 245, 245, 0.95), rgba(200, 200, 200, 0.5));
+    --accent-color: #d84315;
+    --accent-hover: #bf360c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+    /* Evita que o cabeçalho fixo cubra os títulos ao clicar nos links */
+    scroll-padding-top: 80px; 
+}
+
+/* HEADER */
+header {
+    background: var(--header-bg);
+    backdrop-filter: blur(10px); /* Dá um efeito elegante no fundo do header */
+    padding: 1rem 5%;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: background 0.3s ease;
+    
+}
+
+header nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+.theme-btn {
+    background: none;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-primary);
+}
+
+/* MAIN */
+main {
+    padding-top: 80px; /* Compensar o header fixo */
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 7rem 10%;
+    text-align: center;
+}
+
+article {
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+h2 { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--accent-color); }
+p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
+
+/* HERO SECTION (Sua antiga .r1) */
+.hero {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero img {
+    border-radius: 2rem;
+    width: 100%;
+    max-width: 300px; /* Impede que a imagem fique gigante */
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.hero img:hover {
+    transform: scale(1.05);
+}
+
+/* LISTAS E LINKS */
+.skills ul, .project-list {
+    text-align: left;
+    margin: 1rem auto;
+    display: inline-block;
+}
+
+.skills ul li, .project-list li {
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* WHATSAPP BUTTON */
+.whatsappButton {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0cc243;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: flutuante 3s ease-in-out infinite;
+}
+
+.whatsappButton img {
+    height: 35px;
+    width: 35px;
+}
+
+/* FOOTER */
+footer {
+    background: var(--header-bg);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ANIMATIONS */
+@keyframes flutuante {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.reveal{
+    opacity: 0;
+    transform: translateY(-300px);
+    transition: all 0.8s ease;
+}
+
+.reveal.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVIDADE (Mobile) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 4rem; /* Dar espaço para o header que ficou maior */
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    
+    .whatsappButton {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}
