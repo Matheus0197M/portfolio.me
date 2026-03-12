@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <link type="image/png" sizes="32x32" rel="icon" href="./icons8-code-32.png">
-    <title>Matheus César</title>
+    <link type="image/png" sizes="32x32" rel="icon" href="./assets/icons8-code-32.png">
+    <title>Matheus César | Portfólio</title>
 </head>
 
 <body>
@@ -18,13 +18,17 @@
             <a href="#metas">Metas</a>
             <a href="#contact">Contato</a>
         </nav>
-        <button id="themeToggle" class="theme-btn">🌙</button>
+
+        <div class="header-actions">
+            <button id="menuToggle" class="menu-btn" aria-label="Abrir menu">☰</button>
+            <button id="themeToggle" class="theme-btn" aria-label="Alternar tema">🌙</button>
+        </div>
     </header>
 
     <main>
         <section class="hero" id="home">
             <article class="hero-image">
-                <img src="./capa-portfolio.png" alt="Foto de Matheus César">
+                <img class="img-projeto" src="./assets/capa-portfolio.png" alt="Foto de Matheus César">
             </article>
             <article class="hero-text">
                 <h1>Matheus César</h1>
@@ -37,7 +41,7 @@
                 <h2>Quem sou eu?</h2>
                 <p>Sou um jovem de 17 anos, apaixonado por programação e Inteligência Artificial. Nasci em Uberlândia e
                     pretendo seguir carreira nessa área. Embora ainda esteja definindo meu nicho exato, tenho um
-                    histórico de exploração em diversas frentes: jogos, cybersegurança, IA, Web, Arduino, e IoT.</p>
+                    histórico de exploração em articleersas frentes: jogos, cybersegurança, IA, Web, Arduino, e IoT.</p>
                 <p>Atualmente, estou descobrindo o melhor caminho a seguir, mas meu maior brilho nos olhos sempre foi
                     para IA e Cybersegurança. Além do código, tenho um forte interesse pela dinâmica da internet e
                     mídias sociais, especialmente o YouTube.</p>
@@ -50,40 +54,89 @@
                 <p>Sempre fui fascinado por Hacking, Deep Web, Games, IA, criatividade e inovação. Meu objetivo
                     principal é construir e desenvolver ferramentas que as pessoas usem regularmente — sites, apps e
                     serviços que agreguem valor real ao dia a dia do usuário.</p>
-
-                <div class="skills">
-                    <p><strong>Linguagens e Ferramentas:</strong></p>
-                    <ul>
-                        <li>🐍 Python (0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣)</li>
-                        <li>💛 JavaScript (0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣)</li>
-                        <li>💨 Tailwind CSS (0️⃣1️⃣2️⃣3️⃣)</li>
-                        <li>📱 React Native (0️⃣1️⃣2️⃣3️⃣4️⃣)</li>
-                        <li>⚙️ C / C++ (0️⃣1️⃣2️⃣)</li>
-                    </ul>
-                </div>
+                <p><strong>Linguagens e Ferramentas:</strong></p>
+                <article class="skills">
+                    <article class="mySkills">
+                        <img src="./assets/icons8-html-50.png" alt="">
+                        <h3>HTML</h3>
+                        <strong><i>Level:</i> 8/10</strong>
+                    </article>
+                    <article class="mySkills">
+                        <img src="./assets/icons8-css-50.png" alt="">
+                        <h3>CSS</h3>
+                        <strong><i>Level:</i> 8/10</strong>
+                    </article>
+                    <article class="mySkills">
+                        <img src="./assets/icons8-js-50.png" alt="">
+                        <h3>JavaScript</h3>
+                        <strong><i>Level:</i> 5/10</strong>
+                    </article>
+                    <article class="mySkills">
+                        <img src="./assets/icons8-tailwind-css-50.png" alt="">
+                        <h3>Tailwind CSS</h3>
+                        <strong><i>Level:</i> 4/10</strong>
+                    </article>
+                    <article class="mySkills">
+                        <img src="./assets/icons8-python-50.png" alt="">
+                        <h3>Python</h3>
+                        <strong><i>Level:</i> 7/10</strong>
+                    </article>
+                    <article class="mySkills">
+                        <img src="./assets/icons8-c-50.png" alt="">
+                        <h3>C</h3>
+                        <strong><i>Level:</i> 3/10</strong>
+                    </article>
+                    <article class="mySkills">
+                        <img src="./assets/icons8-c++-50.png" alt="">
+                        <h3>C++</h3>
+                        <strong><i>Level:</i> 3/10</strong>
+                    </article>
+                    <article class="mySkills">
+                        <img src="./assets/icons8-react-native-50.png" alt="">
+                        <h3>React Native</h3>
+                        <strong><i>Level:</i> 4/10</strong>
+                    </article>
+                </article>
 
                 <h3>Veja alguns projetos que já fiz:</h3>
-                <ol class="project-list">
-                    <li><a href="https://sonholandiabr.onrender.com" target="_blank">Sonholândia</a></li>
-                    <li><a href="https://bg-validade.onrender.com" target="_blank">Brigada de Validade</a></li>
-                </ol>
+                <article class="project-list">
+
+                    <h3><a href="https://sonholandiabr.onrender.com" target="_blank">Sonholândia</a></h3>
+                    <p>Site para compartilhar sonhos e descobrir significados com a ajuda de IA e profissionais.</p>
+                    <article class="galeria-projetos">
+                        <img class="img-projeto" src="./assets/prj1.png" alt="Print Sonholândia 1">
+                        <img class="img-projeto" src="./assets/prj1-2.png" alt="Print Sonholândia 2">
+                    </article>
+
+
+                    <h3><a href="https://bg-validade.onrender.com" target="_blank">Brigada de Validade</a></h3>
+                    <p>Projeto integrador do Senac (2025) focado na logística de produtos perecíveis e
+                        não-perecíveis.</p>
+                    <article class="galeria-projetos">
+                        <img class="img-projeto" src="./assets/prj2.png" alt="Print Brigada 1">
+                        <img class="img-projeto" src="./assets/prj2-2.png" alt="Print Brigada 2">
+                    </article>
+
+                </article>
             </article>
         </section>
 
         <section class="reveal" id="metas">
             <article>
-                <h2>Metas</h2>
-                <p>Também tenho objetivos para 2026, como fazer a versão mobile de projetos anteriores, e também criar
-                    novos: </p>
-                <h3>Aqui estão listados projetos que irão sair do papel: </h3>
-                <ol class="project-list">
-                    <li><a href="https://www.bing.com/search?pglt=2083&q=musicmc&cvid=52fb91d1a2a4441b90304878e10a3989&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQgyNzI2ajBqMagCALACAA&FORM=ANNTA1&PC=U531"
-                            target="_blank">MusicMC (Android)</a> ou <a
-                            href="https://www.bing.com/search?pglt=2083&q=musicmc&cvid=52fb91d1a2a4441b90304878e10a3989&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQgyNzI2ajBqMagCALACAA&FORM=ANNTA1&PC=U531"
-                            target="_blank">MusicMC (IOS)</a></li>
-                    <li><a href="https://sonholandiabr.onrender.com/nossoApp" target="_blank">Sonholândia (Mobile)</a>
-                    </li>
-                </ol>
+                <h2>Metas para 2026</h2>
+                <p>Fazer a versão mobile de projetos anteriores e lançar novas ideias do papel:</p>
+                <article class="project-list">
+
+                    <h3><a href="#" target="_blank">MusicMC (Android / iOS)</a></h3>
+                    <p>App reprodutor de música completo, permitindo baixar músicas e vídeos diretamente.</p>
+                    <img class="img-projeto" src="./assets/prj3.png" alt="Mockup MusicMC">
+
+
+                    <h3><a href="https://sonholandiabr.onrender.com/nossoApp" target="_blank">Sonholândia (Mobile)</a></h3>
+                    <p>Versão dedicada do projeto em desenvolvimento, mantendo as funcionalidades da Web.</p>
+                    <img class="img-projeto" id="m-sl" src="./assets/prj1-3.png" alt="Mockup Sonholândia Mobile">
+
+                </article>
             </article>
         </section>
 
@@ -91,15 +144,14 @@
             <article>
                 <h2>Contato</h2>
                 <p>Quer conhecer mais do meu perfil? Acesse meus links abaixo:</p>
-
-                <div class="social-links">
-                    <a href="https://instagram.com/matheus.cpv7" target="_blank">Instagram</a>
+                <article class="social-links">
+                    <a href="https://instagram.com/matheus.cpv7/" target="_blank">Instagram</a>
                     <a href="https://www.linkedin.com/in/matheuss0197/" target="_blank">LinkedIn</a>
                     <a href="https://github.com/Matheus0197M" target="_blank">GitHub</a>
-                </div>
-
+                </article>
             </article>
         </section>
+
         <section class="reveal" id="LetsWorkTogether">
             <article>
                 <h3>Precisa de um programador Full Stack?</h3>
@@ -107,6 +159,7 @@
             </article>
         </section>
     </main>
+
     <a class="whatsappButton"
         href="https://wa.me/5534991075775?text=Olá!%20Vim%20pelo%20seu%20portfólio%20e%20gostaria%20de%20conversar!"
         target="_blank" aria-label="Falar no WhatsApp">
@@ -118,7 +171,6 @@
     </footer>
 
     <script src="./script.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 
 </html>

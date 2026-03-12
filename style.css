@@ -1,54 +1,54 @@
-/* VARIÁVEIS (Corrigidas para a sintaxe oficial do CSS) */
 :root {
     --bg-primary: #141414;
     --bg-secondary: #22002f;
     --text-color: whitesmoke;
-    --header-bg: linear-gradient(to bottom, rgba(34, 0, 47, 0.95), rgba(20, 20, 20, 0.5));
+    --header-bg: rgba(20, 20, 20, 0.85);
     --accent-color: #ff9800;
     --accent-hover: #ffb74d;
 }
 
-/* Classe aplicada via JavaScript para o Tema Claro */
 .light-theme {
     --bg-primary: #f5f5f5;
     --bg-secondary: #e0e0e0;
     --text-color: #1a1a1a;
-    --header-bg: linear-gradient(to bottom, rgba(245, 245, 245, 0.95), rgba(200, 200, 200, 0.5));
+    --header-bg: rgba(245, 245, 245, 0.85);
     --accent-color: #d84315;
     --accent-hover: #bf360c;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px; /* Compensa o header ao clicar nas âncoras */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
     background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+    background-attachment: fixed; /* Evita que o gradiente quebre ao rolar muito */
     font-family: 'Inter', sans-serif;
     color: var(--text-color);
     transition: background 0.3s ease, color 0.3s ease;
-    /* Evita que o cabeçalho fixo cubra os títulos ao clicar nos links */
-    scroll-padding-top: 80px; 
 }
 
 /* HEADER */
 header {
     background: var(--header-bg);
-    backdrop-filter: blur(10px); /* Dá um efeito elegante no fundo do header */
+    backdrop-filter: blur(10px);
     padding: 1rem 5%;
     display: flex;
     position: fixed;
     width: 100%;
     top: 0;
-    justify-content: space-around;
+    justify-content: space-between; /* Melhor distribuição */
     align-items: center;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     transition: background 0.3s ease;
-    
 }
 
 header nav {
@@ -67,17 +67,8 @@ a:hover {
     color: var(--accent-hover);
 }
 
-.workTogether{
-    padding: 4rem 1rem;
-}
-
-.workTogether:hover{
-    color: #ffbf60;
-    transform: translateY(-20px);
-    transition: all 400ms ease;
-}
-
-.theme-btn {
+.theme-btn,
+.menu-btn {
     background: none;
     border: 1px solid var(--accent-color);
     color: var(--accent-color);
@@ -86,16 +77,22 @@ a:hover {
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
+    font-size: 1.2rem;
 }
 
-.theme-btn:hover {
+.theme-btn:hover,
+.menu-btn:hover {
     background: var(--accent-color);
     color: var(--bg-primary);
 }
 
+.menu-btn {
+    display: none;
+}
+
 /* MAIN */
 main {
-    padding-top: 80px; /* Compensar o header fixo */
+    padding-top: 80px;
 }
 
 section {
@@ -104,7 +101,7 @@ section {
     justify-content: center;
     align-items: center;
     min-height: 80vh;
-    padding: 7rem 10%;
+    padding: 5rem 5%;
     text-align: center;
 }
 
@@ -115,9 +112,10 @@ article {
 
 h1 { font-size: 3rem; margin-bottom: 0.5rem; }
 h2 { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--accent-color); }
+h3 { margin-top: 2rem; margin-bottom: 1rem; color: var(--text-color); }
 p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
 
-/* HERO SECTION (Sua antiga .r1) */
+/* HERO SECTION */
 .hero {
     display: flex;
     flex-direction: row;
@@ -128,7 +126,7 @@ p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
 .hero img {
     border-radius: 2rem;
     width: 100%;
-    max-width: 300px; /* Impede que a imagem fique gigante */
+    max-width: 300px;
     height: auto;
     object-fit: cover;
     transition: transform 0.2s ease-in-out;
@@ -139,22 +137,91 @@ p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
     transform: scale(1.05);
 }
 
-/* LISTAS E LINKS */
-.skills ul, .project-list {
-    text-align: left;
-    margin: 1rem auto;
-    display: inline-block;
+.project-list{
+    gap: 1rem;
 }
 
-.skills ul li, .project-list li {
-    margin-bottom: 0.5rem;
+/* LISTAS E PROJETOS */
+.skills{
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-items: center;
+    max-width: 80%;
+}
+
+@media (min-width: 640px) {
+    .skills {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .skills {
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
+    }
+}
+
+.mySkills{
+    background: rgba(77, 77, 77, 0.3);
+    border: 1px solid gray;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin: 1rem 2rem;
+}
+
+
+.skills small {
+    display: block;
+    margin-left: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.galeria-projetos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .galeria-projetos {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+
+
+/* Ajuste vital para imagens não quebrarem o layout no celular */
+.img-projeto {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
     margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.workTogether {
+    padding: 2rem 1rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+.workTogether:hover {
+    color: var(--accent-hover);
+    transform: translateY(-10px);
 }
 
 /* WHATSAPP BUTTON */
@@ -172,11 +239,27 @@ p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     animation: flutuante 3s ease-in-out infinite;
+    transition: transform 0.2s;
+}
+
+.whatsappButton:hover {
+    transform: scale(1.1);
 }
 
 .whatsappButton img {
     height: 35px;
     width: 35px;
+}
+
+img:hover, .mySkills:hover{
+    transform: scale(1.05);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(212, 0, 245, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+#m-sl{
+    height: 800px;
 }
 
 /* FOOTER */
@@ -185,6 +268,7 @@ footer {
     padding: 2rem;
     text-align: center;
     margin-top: 2rem;
+    backdrop-filter: blur(10px);
 }
 
 /* ANIMATIONS */
@@ -193,38 +277,74 @@ footer {
     50% { transform: translateY(-10px); }
 }
 
-.reveal{
+.reveal {
     opacity: 0;
-    transform: translateY(-300px);
-    transition: all 0.8s ease;
+    transform: translateY(50px); /* Suavizei a distância para ficar mais elegante */
+    transition: all 0.8s ease-out;
 }
 
-.reveal.show{
+.reveal.show {
     opacity: 1;
     transform: translateY(0);
 }
 
 /* RESPONSIVIDADE (Mobile) */
 @media (max-width: 768px) {
+    main {
+        justify-content: center;
+        padding: 0 1rem;
+    }
+
     header {
         flex-direction: column;
         padding: 1rem;
         gap: 1rem;
+        align-items: stretch;
     }
-    
+
+    .header-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .menu-btn {
+        display: inline-flex;
+    }
+
     header nav {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        padding: 1rem;
+        background: rgba(20, 20, 20, 0.65);
+        border-radius: 1.5rem;
+        backdrop-filter: blur(10px);
+    }
+
+    header nav.open {
+        display: flex;
+    }
+
+    header nav a {
+        display: block;
+        padding: 0.75rem 1rem;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.06);
     }
 
     .hero {
         flex-direction: column;
         text-align: center;
-        margin-top: 4rem; /* Dar espaço para o header que ficou maior */
+        margin-top: 2rem;
     }
 
-    h1 { font-size: 2.5rem; }
+    h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
+    .workTogether { font-size: 2rem; }
     
     .whatsappButton {
         bottom: 1.5rem;
