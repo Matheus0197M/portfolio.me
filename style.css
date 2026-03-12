@@ -1,6 +1,6 @@
 :root {
     --bg-primary: #141414;
-    --bg-secondary: #22002f;
+    --bg-secondary: #08002a;
     --text-color: whitesmoke;
     --header-bg: rgba(20, 20, 20, 0.85);
     --accent-color: #ff9800;
@@ -264,7 +264,7 @@ img:hover, .mySkills:hover{
 
 /* FOOTER */
 footer {
-    background: var(--header-bg);
+    background: linear-gradient(to toop, var(--header-bg), var(--bg-secondary));
     padding: 2rem;
     text-align: center;
     margin-top: 2rem;
