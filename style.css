@@ -431,7 +431,7 @@ img:hover,
 
 /* FOOTER */
 footer {
-    background: linear-gradient(to toop, var(--header-bg), var(--bg-secondary));
+    background: linear-gradient(to top, var(--header-bg), var(--bg-secondary));
     padding: 2rem;
     text-align: center;
     margin-top: 2rem;
