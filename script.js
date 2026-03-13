@@ -57,3 +57,34 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(reveal => {
     observer.observe(reveal);
 });
+
+// 4. CARD FLIP - RESPONSIVO (Desktop hover + Mobile click)
+// Detecta se está em dispositivo touch/mobile
+const isMobile = () => window.matchMedia('(max-width: 1024px)').matches;
+
+// Seleciona todos os cards
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+    // EM MOBILE: Adiciona listener de click para flip
+    card.addEventListener('click', (e) => {
+        // Só executa em mobile
+        if (isMobile()) {
+            // Impede propagação se clicar em um link dentro do card
+            if (e.target.tagName === 'A') return;
+            
+            card.classList.toggle('flipped');
+            
+            // Feedback visual: muda o cursor
+            card.style.cursor = card.classList.contains('flipped') ? 'pointer' : 'pointer';
+        }
+    });
+});
+
+// Reindetecta tamanho ao redimensionar (melhora responsividade)
+window.addEventListener('resize', () => {
+    if (!isMobile()) {
+        // Remove a classe 'flipped' ao voltar para desktop (hover funcionará)
+        cards.forEach(card => card.classList.remove('flipped'));
+    }
+});
